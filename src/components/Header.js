@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 import Cart from './Cart'
 import Logo from '../../public/logo.svg'
 import events from '../vendor/pub-sub';

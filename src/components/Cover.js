@@ -1,12 +1,12 @@
 import React from 'react';
 import moltin from '../vendor/moltin';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import LoadingIcon from '../../public/ripple.svg';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import AddToCartButton from '../components/AddToCartButton';
 import config from '../vendor/config'
 
-export default class Cover extends React.Component {
+class Cover extends React.Component {
 	state = {
 		products: null,
 		lastProduct : {
@@ -74,3 +74,5 @@ export default class Cover extends React.Component {
 		);
 	}
 }
+
+export default Cover;

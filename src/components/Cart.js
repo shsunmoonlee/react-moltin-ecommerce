@@ -1,6 +1,6 @@
 import React from 'react'
 import events from '../vendor/pub-sub';
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 export default class Cart extends React.Component {
 	state = {

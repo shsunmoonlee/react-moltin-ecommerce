@@ -2,7 +2,7 @@ import React from 'react';
 import events from '../vendor/pub-sub';
 import moltin from '../vendor/moltin';
 import _ from 'lodash/object';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import LoadingIcon from '../../public/ripple.svg';
 
 export default class SidebarCart extends React.Component {

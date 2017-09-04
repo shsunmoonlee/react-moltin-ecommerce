@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import moltin from '../vendor/moltin';
 import { Button, Modal } from 'semantic-ui-react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import events from '../vendor/pub-sub';
 
 export default class FormExampleOnSubmit extends Component {
