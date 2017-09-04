@@ -1,5 +1,6 @@
 {
-  "name": "kanmer-store",
+  "name": "LeeArt-store",
+  "homepage": "https://Seunghunsh.github.io/LeeArt-store",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -18,6 +19,8 @@
     "semantic-ui-react": "^0.64.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
