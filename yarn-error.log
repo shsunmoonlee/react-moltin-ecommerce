@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/local/lib/node_modules/node/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/lib/node_modules/node/bin
+
+Yarn version: 
+  0.20.0
+
+Node version: 
+  8.3.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "kanmer-store",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+      "react-scripts": "0.8.4"
+    },
+    "dependencies": {
+      "gulp": "^3.9.1",
+      "lodash": "^4.17.3",
+      "moltin": "^1.0.4",
+      "react": "^15.4.1",
+      "react-addons-css-transition-group": "^15.4.2",
+      "react-dom": "^15.4.1",
+      "react-image-gallery": "^0.7.12",
+      "react-router": "^3.0.0",
+      "semantic-ui": "^2.2.7",
+      "semantic-ui-react": "^0.64.8"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at errnoException (dns.js:53:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:95:26)

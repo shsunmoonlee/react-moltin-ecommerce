@@ -1,0 +1,175 @@
+
+
+.sidebar {
+	width: 330px;
+	background-color: #ffffff;
+	background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	border-right: 1px solid rgba(0,0,0,.1);
+	z-index: 103;
+
+	@include max-width(1600px) {
+		width: 290px;
+	}
+
+	@include max-width(1320px) {
+		display: none;
+	}
+
+	&.display-on-mobile {
+		@include max-width(767px) {
+			display: block;
+		}
+	}
+
+	.close-sidebar {
+		font-size: .9em;
+		@include border-radius(2px);
+		width: 100%;
+		margin-top: 1em;
+		display: none;
+
+		@include max-width(767px) {
+			display: block !important;
+		}
+	}
+
+	.sidebar-inner {
+		padding: 0 1em;
+		.sidebar-element {
+			margin-bottom: 1em;
+			position: relative;
+
+			h4 {
+				text-transform: uppercase;
+				padding-right: 1.5em;
+				color: $color-primary;
+			}
+
+			.button {
+				position: absolute;
+				top: .5em;
+				right: .5em;
+				font-weight: 700 !important;
+			}
+		}
+
+		.sidebar-cart {
+			padding: 1em;
+			margin-top: 1em;
+			background-color: #fff;
+			border: 1px solid $color-light;
+			@include box-shadow(0, 0, 15px, 2px, rgba(0,0,0,.1));
+			position: relative;
+
+			.ui.items {
+				margin-bottom: 0;
+
+				@include max-width(768px) {
+					display: none;
+				}
+			}
+			
+			h4 {
+				@include max-width(767px) {
+					margin-bottom: 0;
+				}
+
+				span {
+					&.price {
+						color: $color-green;
+					}
+				}
+			}
+
+			.header {
+				font-size: 1em !important;
+				text-transform: uppercase;
+				color: $color-secondary !important;
+
+				.price {
+					font-size: .9em;
+					color: $color-primary;
+					border: 1px solid rgba(0,0,0,.1);
+					padding: .2em .5em;
+					display: inline-block;
+					margin-top: .4em;
+				}
+			}
+
+			.empty {
+				color: $color-secondary;
+			}
+
+			.ui.tiny.image {
+				width: 45px;
+			}
+
+			.extra {
+				font-size: 1.2em !important;
+				font-weight: 700;
+
+				i {
+					margin-right: 0 !important;
+				}
+			}
+
+			.checkout.button {
+				background-color: $color-light;
+				font-weight: 700;
+				@include border-radius(0);
+				border: 1px solid $color-light;
+				padding: .6em;
+
+				&.active {
+					background-color: #4CAF50;
+					border: 1px solid #4CAF50;
+					color: #fff;
+
+					&:hover {
+						background: none;
+						color: $color-secondary;
+					}
+				}
+			}
+
+			.loading-icon {
+				position: absolute;
+				bottom: 10px;
+				right: 5px;
+				width: 45px;
+
+				&.non-visible {
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0s .5s, opacity .5s linear;
+				}
+			}
+		}
+
+		.ui.vertical.menu {
+			width: 100%;
+			@include border-radius(0);
+			border-color: #d6d6d6;
+		}
+	}
+
+	.categories {
+		.item {
+			text-transform: uppercase;
+			font-size: 1em;
+			letter-spacing: 1px;
+			margin-bottom: 1em;
+			color: #3a597e !important;
+			border-bottom: 1px solid #e2e2e2;
+			display: block;
+
+			&:hover {
+				cursor: pointer;
+				border-bottom: 1px solid rgba(#3a597e, .5);
+			}
+		}
+	}
+
+}
+

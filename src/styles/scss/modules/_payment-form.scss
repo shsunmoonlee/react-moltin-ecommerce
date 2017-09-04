@@ -1,0 +1,33 @@
+.payment-form {
+	.header {
+		color: $color-primary;
+	}
+
+	.cc-field {
+		input, select {
+			background-color: rgba(36, 91, 125, 0.12) !important;
+		}
+	}
+	
+	.field {
+		input, select {
+			height: 50px;
+			border: 1px solid rgba($color-primary, .2) !important;
+			color: $color-primary;
+			font-weight: 700;
+
+			@include placeholder {
+				color: $color-primary;
+			}
+
+			&:focus {
+				border-color: $color-primary !important;
+			}
+		}
+	}
+
+	.button {
+		height: 50px !important;
+		min-width: 250px;
+	}
+}

@@ -1,0 +1,352 @@
+$color-primary: #2e435c;
+//$color-primary: #2e435c;
+$color-primary-lighter: #8bc4f3;
+$color-secondary: #251A22;
+//$color-secondary: #2e435c;
+$color-light: #EDE4DF;
+$color-green: #4CAF50;
+$color-red: #db2828;
+
+
+@import "modules/mixins";
+@import "modules/helpers";
+@import "modules/buttons";
+@import "modules/table";
+@import "modules/animation";
+@import "modules/overlay";
+@import "../../../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+@import "modules/sidebar";
+@import "modules/payment-form";
+@import "modules/cart-details";
+
+
+body {
+	background-color: #FFFFFF;
+	overflow-y: scroll;
+	position: relative;
+}
+
+.content-container {
+	border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.container {
+	&.fluid {
+		width: 85% !important;
+		padding-left: 350px;
+
+		@include max-width(1600px) {
+			padding-left: 300px;
+			width: 99% !important;
+		}
+
+		@include max-width(1320px) {
+			padding-left: 0;
+			width: 95% !important;
+		}
+	}
+}
+
+.no-padding-top {
+	padding-top: 0 !important;
+}
+
+.pusher {
+	background-color: #FFFFFF;
+	position: relative;
+	min-height: 100%;
+	//background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+}
+
+header {
+	height: 80px;
+
+	.ui.secondary.menu {
+		background-color: #fff;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+		.item {
+			text-transform: uppercase;
+			margin: .8em 0;
+			letter-spacing: 2px;
+			@include border-radius(0px);
+			color: $color-primary;
+
+			&.general {
+				@include max-width(767px) {
+					display: none;
+				}
+			}
+
+			&.navigation-button {
+				display: none;
+
+				@include max-width(767px) {
+					display: block;
+				}
+			}
+
+			span {
+				margin-right: .3em;
+			}
+
+			&.logo {
+				img {
+					width: 100px;
+				}
+			}
+
+			&.cart-item {
+				background-color: rgba(0,0,0,.05);
+				color: $color-secondary;
+				border: 1px solid white;
+
+				@include max-width(767px) {
+					margin-right: 1em;
+				}
+
+				span {
+					font-weight: 700;
+				}
+				
+				&.green {
+					background-color: $color-green;
+					color: #fff;
+				}
+				
+				&:hover {
+					background: none;
+					border: 1px solid $color-green;
+					color: $color-secondary;
+				}
+			}
+		}
+	}
+}
+
+.home-intro {
+	.cover {
+		margin-bottom: 1em;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: center;
+		position: relative;
+
+		.cover-inner {
+			.content {
+				width: 600px;
+				max-width: 100%;
+				height: 520px;
+				padding: 9em 1em;
+				//@include gradient-horizontal(rgba($color-primary, .99), rgba(255,255,255,.0), 60%, 90%);
+				@include gradient-vertical(rgba($color-secondary, .5), $color-primary);
+
+				.inner {
+					border: 1px solid $color-light;
+					padding: 1.5em;
+
+					h1 {
+						color: whitesmoke;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+					}
+
+					p {
+						color: $color-light;
+						font-size: 1.2em;
+					}
+
+					.button {
+						@include border-radius(0);
+
+						&.primary {
+							background-color: #fff;
+							min-width: 200px;
+						}
+						
+						&.secondary {
+							background: none;
+							border: 1px solid rgba(255,255,255,.1);
+							min-width: 200px;
+						}
+					}
+
+					span.price {
+						display: block;
+						font-size: 1.5em;
+						margin-bottom: 1em;
+						color: $color-light;
+					}
+
+					i {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.product-list-element {
+	margin-bottom: 1em !important;
+
+	.ui {
+		&.card {
+			width: 100%;
+			@include border-radius(0);
+			@include box-shadow(5px, 5px, 15px, 2px, rgba(0,0,0,.1));
+			border: none;
+			text-align: center;
+
+			.image {
+				@include border-radius(0);
+				position: relative;
+
+				&:hover {
+					.extra.content {
+						display: block;
+					}
+				}
+
+				.extra.content {
+					display: none;
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0,0,0,.4);
+					@include gradient-vertical(rgba($color-light, .5), $color-primary);
+					padding: 1em;
+
+					.buttons-container {
+						position: absolute;
+						bottom: -100px;
+						left: 0;
+
+						width: 100%;
+						padding: 1em;
+
+						.button {
+							width: 70%;
+							margin-bottom: 1em;
+							@include border-radius(0);
+							border-color: rgba(0,0,0,.8) !important;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.extra.content {
+					display: block;
+
+					.buttons-container {
+						bottom: 0;
+						transition:all 1s linear;
+					}
+				}
+			}
+
+			.content {
+				position: relative;
+				padding-right: 100px;
+				
+				.header {
+					text-align: left;
+					text-transform: uppercase;
+					@include max-width(767px) {
+						font-size: 1.1em;
+					}
+				}
+				
+				.sub {
+					color: grey;
+					text-align: left;
+					display: block;
+					font-style: italic;
+				}
+
+				.price {
+					position: absolute;
+					top: .85em;
+					right: .7em;
+					border: 1px solid $color-primary;
+					padding: .5em;
+
+					span {
+						font-size: 1.2em;
+						font-weight: 600;
+						color: $color-primary;
+
+						@include max-width(767px) {
+							font-size: 1.0em;
+						}
+
+						i {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.product-container {
+	position: relative;
+
+	.product-details {
+		background-color: #fff;
+		@include box-shadow(0, 0, 15px, 2px, rgba(0,0,0,.2));
+		padding: 1.2em;
+
+		h1 {
+			font-weight: 400;
+			text-transform: uppercase;
+			font-size: 1.5em;
+		}
+
+		.price {
+			font-size: 1.2em;
+			display: block;
+			text-align: left;
+			margin-bottom: .4em;
+			margin-top: .5em;
+			color: $color-primary;
+			font-weight: 700;
+		}
+
+		.button {
+			height: 40px;
+			background-color: $color-primary;
+			color: #fff;
+			margin-bottom: 1em;
+			@include border-radius(0);
+			
+			&:hover {
+				background-color: lighten($color-primary, 10%);
+			}
+		}
+	}
+
+	.ui.styled.accordion {
+		@include border-radius(0);
+	}
+}
+.checkout-container {
+	background: #fff;
+}
+
+footer {
+	background-color: $color-primary;
+	padding: 1em 0 1em 0 !important;
+	color: whitesmoke;
+	margin-top: 1em;
+	p {
+		text-align: right;
+	}
+}
+
+.order-successful {
+	padding: 1rem;
+}
